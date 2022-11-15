@@ -19,16 +19,16 @@ export default function LogicApp() {
 
     let urlGet  = "https://api.shrtco.de/v2/shorten";
     
-    let options = {
-        method:"POST",
-        headers:{
-            "Content-type":"application/json; charset=utf-8"
-        },
-        body:JSON.stringify({
-            url:urlUser
-        })
-    }
     try {
+        let options = {
+            method:"POST",
+            headers:{
+                "Content-type":"application/json; charset=utf-8"
+            },
+            body:JSON.stringify({
+                "url":urlUser
+            })
+        }
         let res = await fetch(urlGet,options)
         let json = await res.json()
         if(!res.ok){
