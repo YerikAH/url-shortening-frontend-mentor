@@ -17,18 +17,8 @@ export default function LogicApp() {
 
   async function getData(){
 
-    let urlGet  = "https://api.shrtco.de/v2/shorten?url";
+    let urlGet  = `https://api.shrtco.de/v2/shorten?url=${urlUser}`;
     
-    // help post method error ¿why?
-    // let options = {
-    //     method:"POST",
-    //     headers:{
-    //         "Content-type":"application/json; charset=utf-8"
-    //     },
-    //     body:JSON.stringify({
-    //         "url":urlUser
-    //     })
-    // }
     try {
         let res = await fetch(urlGet)
         let json = await res.json()
