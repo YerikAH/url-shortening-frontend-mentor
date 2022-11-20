@@ -20,3 +20,8 @@ interface ResultJson {
   full_share_link: string;
   original_link: string;
 }
+
+export interface ErrorRes {
+  status: number;
+  statusText: string;
+}
