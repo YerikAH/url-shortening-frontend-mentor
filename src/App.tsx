@@ -1,9 +1,9 @@
-import LogicApp from "./components/LogicApp";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
-      <LogicApp></LogicApp>
+      <Header></Header>
     </>
   );
 }

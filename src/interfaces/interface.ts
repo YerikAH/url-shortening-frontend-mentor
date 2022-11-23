@@ -6,6 +6,7 @@ export interface ShortLinkBox {
 export interface RootObjectJson {
   ok: boolean;
   result: ResultJson;
+  error_code?: number;
 }
 
 interface ResultJson {
@@ -21,7 +22,17 @@ interface ResultJson {
   original_link: string;
 }
 
-export interface ErrorRes {
-  status: number;
-  statusText: string;
+export type ErrorRes = number;
+export interface MessagesModel {
+  error_one: string;
+  error_two: string;
+  error_three: string;
+  error_four: string;
+  error_five: string;
+  error_six: string;
+  error_seven: string;
+  error_eight: string;
+  error_nine: string;
+  error_ten: string;
+  error_special: string;
 }
