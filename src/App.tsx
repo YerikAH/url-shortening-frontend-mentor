@@ -1,11 +1,11 @@
-import Header from "./components/Header";
+import LogicApp from "./components/LogicApp";
 
 function App() {
   return (
     <>
-<Header></Header>  
-  </>
-  )
+      <LogicApp></LogicApp>
+    </>
+  );
 }
 
-export default App
+export default App;

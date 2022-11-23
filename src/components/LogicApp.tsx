@@ -26,9 +26,12 @@ export default function LogicApp() {
   function updateData() {
     let fullData = getData(urlUser);
     // error
-    setLinkShort([...linkShort, fullData]);
-    let saveLocal: string = JSON.stringify([...linkShort, fullData]);
-    localStorage.setItem(saveLinkLocal, saveLocal);
+    fullData.then();
+    // if (fullData)
+    //   setLinkShort([...linkShort, fullData]);
+    //   let saveLocal: string = JSON.stringify([...linkShort, fullData]);
+    //   localStorage.setItem(saveLinkLocal, saveLocal);
+    // }
   }
   useEffect(() => {
     const getVintageData = localStorage.getItem(saveLinkLocal);

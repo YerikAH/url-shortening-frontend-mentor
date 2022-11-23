@@ -4,7 +4,7 @@ import {
   ErrorRes,
 } from "../interfaces/interface";
 
-export async function getData(url: string): Promise<ShortLinkBox | ErrorRes> {
+export async function getData(url: string) {
   const urlGet = `https://api.shrtco.de/v2/shorten?url=${url}`;
   let result: ShortLinkBox | ErrorRes;
   try {
@@ -24,7 +24,8 @@ export async function getData(url: string): Promise<ShortLinkBox | ErrorRes> {
       urlShort: (await json).result.full_short_link,
       urlLarge: (await json).result.original_link,
     };
-    return result;
+    const resultSuccess: string = JSON.stringify(result);
+    localStorage.setItem("getDataStorage", resultSuccess);
   } catch (err) {
     if (typeof err === "string") {
       result = JSON.parse(err);
@@ -34,6 +35,7 @@ export async function getData(url: string): Promise<ShortLinkBox | ErrorRes> {
         statusText: "An error arose in the file /functions/getData.ts",
       };
     }
-    return result;
+    const resultError: string = JSON.stringify(result);
+    localStorage.setItem("getDataStorage", resultError);
   }
 }

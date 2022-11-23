@@ -1,29 +1,33 @@
-import React from 'react'
-import {NavComponent} from "../styles/header-styles";
+import React from "react";
+import {
+  NavComponent,
+  NavComponentUl,
+  ComponentUlLiA,
+  NavComponentFirst,
+  NavComponentSecond,
+  ComponentUlLi,
+  Logo,
+} from "../styles/header-styles";
 import logo from "../assets/logo.svg";
 export default function Header() {
   return (
     <NavComponent>
       <NavComponentFirst>
-        <Logo src={logo}/>
+        <Logo src={logo} />
       </NavComponentFirst>
       <NavComponentSecond>
         <NavComponentUl>
-          
-          <NavComponentUlLi>
-            <NavComponentUlLiA>Features</NavComponentUlLiA>
-          </NavComponentUlLi>
-          <NavComponentUlLi>
-            <NavComponentUlLiA>Pricing</NavComponentUlLiA>
-          </NavComponentUlLi>
-          <NavComponentUlLi>
-            <NavComponentUlLiA>Resources</NavComponentUlLiA>
-          </NavComponentUlLi>
-
+          <ComponentUlLi>
+            <ComponentUlLiA>Features</ComponentUlLiA>
+          </ComponentUlLi>
+          <ComponentUlLi>
+            <ComponentUlLiA>Pricing</ComponentUlLiA>
+          </ComponentUlLi>
+          <ComponentUlLi>
+            <ComponentUlLiA>Resources</ComponentUlLiA>
+          </ComponentUlLi>
         </NavComponentUl>
       </NavComponentSecond>
-    </NavComponent>  
-
-
-  )
+    </NavComponent>
+  );
 }
