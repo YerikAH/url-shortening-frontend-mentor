@@ -7,27 +7,47 @@ import {
   NavComponentSecond,
   ComponentUlLi,
   Logo,
+  SeparatorNav,
+  ComponentUlLiASpecial,
+  HamButton,
+  HamButtonImg,
 } from "../styles/header-styles";
 import logo from "../assets/logo.svg";
+import ham from "../assets/";
 export default function Header() {
   return (
     <NavComponent>
-      <NavComponentFirst>
-        <Logo src={logo} />
-      </NavComponentFirst>
-      <NavComponentSecond>
-        <NavComponentUl>
+      <SeparatorNav>
+        <NavComponentFirst>
+          <Logo src={logo} />
+        </NavComponentFirst>
+        <NavComponentSecond>
+          <NavComponentUl>
+            <ComponentUlLi>
+              <ComponentUlLiA>Features</ComponentUlLiA>
+            </ComponentUlLi>
+            <ComponentUlLi>
+              <ComponentUlLiA>Pricing</ComponentUlLiA>
+            </ComponentUlLi>
+            <ComponentUlLi>
+              <ComponentUlLiA>Resources</ComponentUlLiA>
+            </ComponentUlLi>
+          </NavComponentUl>
+        </NavComponentSecond>
+      </SeparatorNav>
+      <SeparatorNav>
+        <NavComponentUl className="none">
           <ComponentUlLi>
-            <ComponentUlLiA>Features</ComponentUlLiA>
+            <ComponentUlLiA>Login</ComponentUlLiA>
           </ComponentUlLi>
           <ComponentUlLi>
-            <ComponentUlLiA>Pricing</ComponentUlLiA>
-          </ComponentUlLi>
-          <ComponentUlLi>
-            <ComponentUlLiA>Resources</ComponentUlLiA>
+            <ComponentUlLiASpecial>Sign Up</ComponentUlLiASpecial>
           </ComponentUlLi>
         </NavComponentUl>
-      </NavComponentSecond>
+        <HamButton>
+          <HamButtonImg src={} />
+        </HamButton>
+      </SeparatorNav>
     </NavComponent>
   );
 }
