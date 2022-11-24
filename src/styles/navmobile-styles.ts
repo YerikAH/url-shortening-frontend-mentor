@@ -25,7 +25,7 @@ export const NavAppUlLi = styled.li`
 export const NavAppUlLiA = styled.a`
   width: 100%;
   display: block;
-  color: var(--white);
+  color: var(--grayish-violet);
   font-size: 1rem;
   font-weight: 700;
   padding: 1rem;
