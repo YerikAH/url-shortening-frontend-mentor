@@ -13,7 +13,7 @@ import {
   HamButtonImg,
 } from "../styles/header-styles";
 import logo from "../assets/logo.svg";
-import ham from "../assets/";
+import ham from "../assets/ham.svg";
 export default function Header() {
   return (
     <NavComponent>
@@ -45,7 +45,7 @@ export default function Header() {
           </ComponentUlLi>
         </NavComponentUl>
         <HamButton>
-          <HamButtonImg src={} />
+          <HamButtonImg src={ham} />
         </HamButton>
       </SeparatorNav>
     </NavComponent>
