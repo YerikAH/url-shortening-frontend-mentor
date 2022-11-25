@@ -4,8 +4,11 @@ export const NavComponent = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 2rem 1rem;
-  max-width: 1200px; /* soon change */
+  max-width: 1100px; /* soon change */
   width: 100%;
+  @media (min-width: 900px) {
+    padding: 2.5rem 0;
+  }
 `;
 export const NavComponentFirst = styled.div`
   display: flex;
@@ -35,6 +38,10 @@ export const ComponentUlLiA = styled.a`
   font-weight: 700;
   padding: 1rem 0;
   text-align: center;
+  transition: 0.3s;
+  &:hover {
+    color: var(--very-dark-blue);
+  }
 `;
 export const ComponentUlLiASpecial = styled.button`
   margin: 0 1rem;

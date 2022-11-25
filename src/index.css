@@ -7,6 +7,7 @@
   --grayish-violet: hsl(257, 7%, 63%);
   --very-dark-blue: hsl(255, 11%, 22%);
   --very-dark-violet: hsl(260, 8%, 14%);
+  --bg-section: hsl(230, 25%, 95%);
   --white: #fff;
   --family: "Poppins", sans-serif;
 }
@@ -23,6 +24,10 @@ li {
   text-decoration: none;
   list-style: none;
 }
+a,
+button {
+  cursor: pointer;
+}
 button,
 input {
   border: none;
@@ -36,6 +41,8 @@ input {
   align-items: center;
 }
 main {
-  width: 100%;
-  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
