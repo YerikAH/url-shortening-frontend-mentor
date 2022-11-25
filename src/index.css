@@ -19,6 +19,9 @@
   box-sizing: border-box;
   font-family: var(--family);
 }
+html {
+  overflow-x: hidden;
+}
 a,
 li {
   text-decoration: none;

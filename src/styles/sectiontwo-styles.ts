@@ -4,6 +4,8 @@ import bgShorten from "../assets/bg-shorten-mobile.svg";
 export const DivSectionTwo = styled.div`
   width: 100%;
   max-width: 1100px;
+  position: relative;
+  top: -5rem;
 `;
 export const DivSectionTwoBox = styled.div`
   background-color: var(--dark-violet);
@@ -24,7 +26,7 @@ export const DivSectionTwoBoxImage = styled.div`
   background-size: cover;
   background-position: 4rem -4.5rem;
 `;
-export const DivSectionTwoBoxLogic = styled.div`
+export const DivSectionTwoBoxLogic = styled.form`
   position: relative;
   z-index: 200;
   display: flex;

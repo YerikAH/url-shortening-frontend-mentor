@@ -7,4 +7,5 @@ export const ColorBg = styled.section`
   justify-content: center;
   align-items: center;
   padding: 0 1rem;
+  margin-top: 10rem;
 `;

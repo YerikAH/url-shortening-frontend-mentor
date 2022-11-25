@@ -1,16 +1,23 @@
 import React from "react";
+import { PropsR } from "../interfaces/interface";
 import {
   ShortLinkOriginal,
   ShortLinkBox,
   ShortLinkShort,
   ShortLinkButton,
 } from "../styles/shortlink-styles";
-export default function ShortLink() {
+
+export default function ShortLink({ urlOriginal, urlShort }: PropsR) {
   return (
     <ShortLinkBox>
-      <ShortLinkOriginal>www.youtube.com</ShortLinkOriginal>
-      <ShortLinkShort>https://rel.ink/a2rda2w</ShortLinkShort>
-      <ShortLinkButton>Copy</ShortLinkButton>
+      <ShortLinkOriginal>{urlOriginal}</ShortLinkOriginal>
+      <ShortLinkShort id="url">{urlShort}</ShortLinkShort>
+      <ShortLinkButton
+        data-clipboard-action="copy"
+        data-clipboard-target="#url"
+      >
+        Copy
+      </ShortLinkButton>
     </ShortLinkBox>
   );
 }

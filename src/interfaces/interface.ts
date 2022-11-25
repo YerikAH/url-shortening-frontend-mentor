@@ -36,3 +36,7 @@ export interface MessagesModel {
   error_ten: string;
   error_special: string;
 }
+export interface PropsR {
+  urlOriginal: string;
+  urlShort: string;
+}

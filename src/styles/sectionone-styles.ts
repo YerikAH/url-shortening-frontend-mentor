@@ -28,6 +28,10 @@ export const SectionGridOne = styled.div`
 export const GridOneResponsive = styled.div`
   width: 100%;
   max-width: 400px;
+  overflow: hidden;
+  @media (min-width: 400px) {
+    overflow: initial;
+  }
   @media (min-width: 900px) {
     max-width: none;
   }

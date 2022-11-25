@@ -10,6 +10,9 @@ export const ShortLinkOriginal = styled.p`
   color: var(--very-dark-blue);
   border-bottom: 1px solid var(--gray);
   padding: 1rem;
+  line-height: 33px;
+  height: 3.5rem;
+  overflow: hidden;
 `;
 export const ShortLinkShort = styled.p`
   color: var(--cyan);
