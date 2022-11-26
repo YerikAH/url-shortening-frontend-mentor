@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+export const HeaderComponent = styled.header``;
 export const NavComponent = styled.nav`
   display: flex;
   justify-content: space-between;

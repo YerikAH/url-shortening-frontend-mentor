@@ -1,4 +1,5 @@
 import styled from "styled-components";
+export const MainComponent = styled.main``;
 export const ColorBg = styled.section`
   background-color: var(--bg-section);
   width: 100vw;
