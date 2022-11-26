@@ -2,7 +2,8 @@
 :root {
   --cyan: hsl(180, 66%, 49%);
   --dark-violet: hsl(257, 27%, 26%);
-  --Red: hsl(0, 87%, 67%);
+  --red: hsl(0, 87%, 67%);
+  --red-hover: hsl(0, 96%, 79%);
   --gray: hsl(0, 0%, 75%);
   --grayish-violet: hsl(257, 7%, 63%);
   --very-dark-blue: hsl(255, 11%, 22%);

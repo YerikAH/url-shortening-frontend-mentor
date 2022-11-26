@@ -3,7 +3,9 @@ import {
   ShortLinkBox,
   ErrorRes,
   RootObjectJson,
+  BorderInterface,
 } from "../interfaces/interface";
+import { initialBorder } from "../home/initialVariables";
 import { saveLinkLocal } from "../interfaces/variables";
 import { customMessage } from "../functions/custom";
 import ShortLink from "./ShortLink";
@@ -19,22 +21,32 @@ import {
 } from "../styles/sectiontwo-styles";
 
 export default function SectionTwo() {
+  const [borderError, setBorderError] =
+    useState<BorderInterface>(initialBorder);
   const [urlUser, setUrlUser] = useState("");
   const [linkShort, setLinkShort] = useState<ShortLinkBox[]>([]);
   const [thereError, setThereError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    let userChange = evt.target.value;
+    const userChange = evt.target.value;
     setUrlUser(userChange);
   };
   const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
+    setUrlUser("");
     getData();
   };
-  const handleDelete = (
-    evt: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {};
+  const handleDelete = (id: string) => {
+    const tempLinks: ShortLinkBox[] = [...linkShort];
+    const tempDeleteLinks: ShortLinkBox[] = tempLinks.filter(
+      (item) => item.id !== id
+    );
+    const convertToString = JSON.stringify(tempDeleteLinks);
+
+    setLinkShort(tempDeleteLinks);
+    localStorage.setItem(saveLinkLocal, convertToString);
+  };
   async function getData() {
     const urlGet = `https://api.shrtco.de/v2/shorten?url=${urlUser}`;
 
@@ -43,19 +55,19 @@ export default function SectionTwo() {
       const json: Promise<RootObjectJson> = await res.json();
 
       if (!res.ok) {
-        let viewError: number | undefined = (await json).error_code; // bad code, i think
-        let passAsString: string = JSON.stringify(viewError);
+        const viewError: number | undefined = (await json).error_code; // bad code, i think
+        const passAsString: string = JSON.stringify(viewError);
         throw passAsString;
       }
 
-      let result: ShortLinkBox = {
+      const result: ShortLinkBox = {
         id: self.crypto.randomUUID(),
         urlShort: (await json).result.full_short_link,
         urlLarge: (await json).result.original_link,
       };
 
       setLinkShort([...linkShort, result]);
-      let saveLocal: string = JSON.stringify([...linkShort, result]);
+      const saveLocal: string = JSON.stringify([...linkShort, result]);
       localStorage.setItem(saveLinkLocal, saveLocal);
       setThereError(false);
     } catch (err) {
@@ -65,7 +77,7 @@ export default function SectionTwo() {
       } else {
         result = 11;
       }
-      let messageCustom = customMessage(result);
+      const messageCustom = customMessage(result);
       setErrorMessage(messageCustom);
       setThereError(true);
     }
@@ -79,6 +91,19 @@ export default function SectionTwo() {
       setLinkShort([]);
     }
   }, []);
+  useEffect(() => {
+    let borderError: BorderInterface = {
+      border: "1px solid var(--red)",
+      color: "var(--red)",
+    };
+    if (thereError) {
+      setBorderError(borderError);
+    } else {
+      borderError.color = "var(--very-dark-blue)";
+      borderError.border = "none";
+      setBorderError(borderError);
+    }
+  }, [thereError]);
 
   return (
     <DivSectionTwo>
@@ -91,6 +116,7 @@ export default function SectionTwo() {
             name="url"
             onChange={(evt) => handleChange(evt)}
             value={urlUser}
+            style={borderError}
           />
           {thereError && <SectionTwoBoxSpan>{errorMessage}</SectionTwoBoxSpan>}
           <SectionTwoBoxButton type="submit">Shorten It!</SectionTwoBoxButton>
@@ -100,8 +126,10 @@ export default function SectionTwo() {
         {linkShort.map((item) => (
           <ShortLink
             key={item.id}
+            idLink={item.id}
             urlOriginal={item.urlLarge}
             urlShort={item.urlShort}
+            handleDelete={handleDelete}
           />
         ))}
       </AllShortLinks>

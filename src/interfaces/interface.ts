@@ -36,7 +36,16 @@ export interface MessagesModel {
   error_ten: string;
   error_special: string;
 }
-export interface PropsR {
+export interface Props {
+  idLink: string;
   urlOriginal: string;
   urlShort: string;
+  handleDelete: (id: string) => void;
+}
+export interface BackgroundInterface {
+  backgroundColor: string;
+}
+export interface BorderInterface {
+  border: string;
+  color: string;
 }

@@ -1,23 +1,62 @@
-import React from "react";
-import { PropsR } from "../interfaces/interface";
+import React, { useState } from "react";
+import { Props, BackgroundInterface } from "../interfaces/interface";
+import deleteImage from "../assets/destroy.svg";
+import { initialBackground } from "../home/initialVariables";
 import {
   ShortLinkOriginal,
   ShortLinkBox,
   ShortLinkShort,
   ShortLinkButton,
+  ButtonDeleteLinkImage,
+  ButtonDeleteLink,
 } from "../styles/shortlink-styles";
 
-export default function ShortLink({ urlOriginal, urlShort }: PropsR) {
+export default function ShortLink({
+  idLink,
+  urlOriginal,
+  urlShort,
+  handleDelete,
+}: Props) {
+  const [textCopy, setTextCopy] = useState("Copy");
+  const [background, setBackground] =
+    useState<BackgroundInterface>(initialBackground);
+  const handleClickClock = () => {
+    let styleActiveBg: BackgroundInterface = {
+      backgroundColor: "var(--dark-violet)",
+    };
+    setTextCopy("Copied!");
+    setBackground(styleActiveBg);
+    setInterval(() => {
+      styleActiveBg.backgroundColor = "var(--cyan)";
+      setBackground(styleActiveBg);
+      setTextCopy("Copy");
+    }, 3000);
+  };
+  const handleRemoveLink = (
+    evt: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    let getId: string = evt.currentTarget.value;
+    handleDelete(getId);
+  };
   return (
     <ShortLinkBox>
       <ShortLinkOriginal>{urlOriginal}</ShortLinkOriginal>
-      <ShortLinkShort id="url">{urlShort}</ShortLinkShort>
+      <ShortLinkShort>{urlShort}</ShortLinkShort>
       <ShortLinkButton
-        data-clipboard-action="copy"
-        data-clipboard-target="#url"
+        className="btnClipboard"
+        data-clipboard-text={urlShort}
+        onClick={handleClickClock}
+        style={background}
       >
-        Copy
+        {textCopy}
       </ShortLinkButton>
+      <ButtonDeleteLink
+        className="button-delete-link"
+        value={idLink}
+        onClick={(evt) => handleRemoveLink(evt)}
+      >
+        <ButtonDeleteLinkImage src={deleteImage} />
+      </ButtonDeleteLink>
     </ShortLinkBox>
   );
 }
