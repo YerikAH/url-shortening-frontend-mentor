@@ -21,7 +21,7 @@ export default function Header() {
       <NavComponent>
         <SeparatorNav>
           <NavComponentFirst>
-            <Logo src={logo} />
+            <Logo src={logo} alt="logo" />
           </NavComponentFirst>
           <NavComponentSecond>
             <NavComponentUl>
@@ -47,7 +47,7 @@ export default function Header() {
             </ComponentUlLi>
           </NavComponentUl>
           <HamButton>
-            <HamButtonImg src={ham} />
+            <HamButtonImg src={ham} alt="open menu" />
           </HamButton>
         </SeparatorNav>
       </NavComponent>

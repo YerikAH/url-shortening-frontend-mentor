@@ -4,7 +4,7 @@ export const DivSectionThree = styled.div`
   max-width: 1100px;
   margin: 1rem 0 0 0;
   @media (min-width: 900px) {
-    margin-top: 3rem 0 6rem 0;
+    margin: 3rem 0 6rem 0;
   }
 `;
 

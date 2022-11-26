@@ -29,7 +29,7 @@ export default function SectionThree() {
       <SectionThreeSecond>
         <STSecondBox>
           <STSecondBoxCircle>
-            <STSecondBoxCircleImage src={recognition} />
+            <STSecondBoxCircleImage src={recognition} alt="statistics" />
           </STSecondBoxCircle>
           <STSecondBoxTitle>Brand Recognition</STSecondBoxTitle>
           <STSecondBoxDescription>
@@ -39,7 +39,7 @@ export default function SectionThree() {
         </STSecondBox>
         <STSecondBox>
           <STSecondBoxCircle>
-            <STSecondBoxCircleImage src={record} />
+            <STSecondBoxCircleImage src={record} alt="time" />
           </STSecondBoxCircle>
           <STSecondBoxTitle>Detailed Records</STSecondBoxTitle>
           <STSecondBoxDescription>
@@ -49,7 +49,7 @@ export default function SectionThree() {
         </STSecondBox>
         <STSecondBox>
           <STSecondBoxCircle>
-            <STSecondBoxCircleImage src={customizable} />
+            <STSecondBoxCircleImage src={customizable} alt="paint" />
           </STSecondBoxCircle>
           <STSecondBoxTitle>Fully Customizable</STSecondBoxTitle>
           <STSecondBoxDescription>

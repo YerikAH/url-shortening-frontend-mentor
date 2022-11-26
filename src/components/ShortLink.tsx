@@ -54,8 +54,9 @@ export default function ShortLink({
         className="button-delete-link"
         value={idLink}
         onClick={(evt) => handleRemoveLink(evt)}
+        aria-label="Delete link"
       >
-        <ButtonDeleteLinkImage src={deleteImage} />
+        <ButtonDeleteLinkImage src={deleteImage} alt="Delete" />
       </ButtonDeleteLink>
     </ShortLinkBox>
   );
