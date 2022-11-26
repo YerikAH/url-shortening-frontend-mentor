@@ -1,5 +1,9 @@
 import styled from "styled-components";
-export const HeaderComponent = styled.header``;
+export const HeaderComponent = styled.header`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
 export const NavComponent = styled.nav`
   display: flex;
   justify-content: space-between;

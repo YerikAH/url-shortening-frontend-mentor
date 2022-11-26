@@ -93,7 +93,7 @@ export default function SectionTwo() {
   }, []);
   useEffect(() => {
     let borderError: BorderInterface = {
-      border: "1px solid var(--red)",
+      border: "5px solid var(--red)",
       color: "var(--red)",
     };
     if (thereError) {
