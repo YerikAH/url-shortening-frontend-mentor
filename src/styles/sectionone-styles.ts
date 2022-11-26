@@ -5,6 +5,9 @@ export const SectionApp = styled.section`
   width: 100%;
   margin-top: 2rem;
   max-width: 1100px;
+  @media (min-width: 900px) {
+    padding-left: 1rem;
+  }
 `;
 
 export const SectionGrid = styled.div`
@@ -23,6 +26,10 @@ export const SectionGridOne = styled.div`
   justify-content: center;
   @media (min-width: 900px) {
     grid-area: sectionGridOne;
+    overflow: hidden;
+  }
+  @media (min-width: 1100px) {
+    overflow: initial;
   }
 `;
 export const GridOneResponsive = styled.div`

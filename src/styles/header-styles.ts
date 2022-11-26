@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const NavComponent = styled.nav`
   display: flex;
   justify-content: space-between;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
   max-width: 1100px; /* soon change */
   width: 100%;
   @media (min-width: 900px) {
-    padding: 2.5rem 0;
+    padding: 2.5rem 1.5rem;
   }
 `;
 export const NavComponentFirst = styled.div`

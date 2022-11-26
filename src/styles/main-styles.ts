@@ -6,6 +6,6 @@ export const ColorBg = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   margin-top: 10rem;
 `;

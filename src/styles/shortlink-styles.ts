@@ -47,6 +47,7 @@ export const ShortLinkButton = styled.button`
   font-weight: 700;
   border-radius: 0.3rem;
   margin: 0 1rem 1rem 1rem;
+  transition: 0.3s;
   @media (min-width: 900px) {
     margin: 0 1rem 0 0;
     font-size: 1rem;

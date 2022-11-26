@@ -10,7 +10,7 @@ export default function Main() {
         <SectionOne></SectionOne>
         <ColorBg>
           <SectionTwo></SectionTwo>
-          {/* <SectionThree></SectionThree> */}
+          <SectionThree></SectionThree>
         </ColorBg>
       </main>
     </>
