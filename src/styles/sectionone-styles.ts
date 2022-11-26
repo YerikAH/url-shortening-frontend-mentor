@@ -24,6 +24,7 @@ export const SectionGridOne = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow: hidden;
   @media (min-width: 900px) {
     grid-area: sectionGridOne;
     overflow: hidden;
