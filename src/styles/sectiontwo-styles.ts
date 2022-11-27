@@ -72,9 +72,13 @@ export const SectionTwoBoxButton = styled.button`
   color: var(--white);
   font-weight: 700;
   background-color: var(--cyan);
+  transition: 0.3s;
   @media (min-width: 900px) {
     width: 18%;
     font-size: 1.125rem;
+  }
+  &:hover {
+    background-color: var(--cyan-hover);
   }
 `;
 export const AllShortLinks = styled.div``;

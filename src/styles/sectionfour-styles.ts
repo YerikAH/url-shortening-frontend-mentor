@@ -53,7 +53,11 @@ export const SFDButton = styled.button`
   font-weight: 700;
   background-color: var(--cyan);
   margin-top: 1rem;
+  transition: 0.3s;
   @media (min-width: 900px) {
     font-size: 1.125rem;
+  }
+  &:hover {
+    background-color: var(--cyan-hover);
   }
 `;

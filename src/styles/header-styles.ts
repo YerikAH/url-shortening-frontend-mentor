@@ -55,6 +55,10 @@ export const ComponentUlLiASpecial = styled.button`
   border-radius: 2rem;
   font-weight: 700;
   background-color: var(--cyan);
+  transition: 0.3s;
+  &:hover {
+    background-color: var(--cyan-hover);
+  }
 `;
 export const SeparatorNav = styled.div`
   display: flex;

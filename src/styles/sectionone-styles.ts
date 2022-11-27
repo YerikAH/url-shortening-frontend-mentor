@@ -104,8 +104,12 @@ export const SectionGridTwoButton = styled.button`
   padding: 0.7rem 2rem;
   border-radius: 2rem;
   font-weight: 700;
+  transition: 0.3s;
   background-color: var(--cyan);
   @media (min-width: 900px) {
     font-size: 1.3rem;
+  }
+  &:hover {
+    background-color: var(--cyan-hover);
   }
 `;
