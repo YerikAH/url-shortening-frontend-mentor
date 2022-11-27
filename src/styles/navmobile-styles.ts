@@ -5,7 +5,7 @@ export const AllNavApp = styled.div`
   height: 100vh;
   left: 0;
   display: grid;
-  padding: 5rem 1rem;
+  padding: 5rem 1.5rem;
 `;
 export const NavApp = styled.nav`
   background-color: var(--dark-violet);
@@ -25,8 +25,8 @@ export const NavAppUlLi = styled.li`
 export const NavAppUlLiA = styled.a`
   width: 100%;
   display: block;
-  color: var(--grayish-violet);
-  font-size: 1rem;
+  color: var(--white);
+  font-size: 1.125rem;
   font-weight: 700;
   padding: 1rem;
   text-align: center;
@@ -40,7 +40,7 @@ export const SeparatorDiv = styled.div`
 `;
 
 export const NavAppUlLiButton = styled.button`
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: var(--white);
   padding: 0.7rem 1.5rem;
   width: 100%;

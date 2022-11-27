@@ -4,16 +4,21 @@ import { ColorBg, MainComponent } from "../styles/main-styles";
 import SectionTwo from "./SectionTwo";
 import SectionThree from "./SectionThree";
 import SectionFour from "./SectionFour";
-export default function Main() {
+import { PropsMain } from "../interfaces/interface";
+export default function Main({ mobile }: PropsMain) {
   return (
     <>
       <MainComponent>
         <SectionOne></SectionOne>
-        <ColorBg>
-          <SectionTwo></SectionTwo>
-          <SectionThree></SectionThree>
-        </ColorBg>
-        <SectionFour></SectionFour>
+        {!mobile && (
+          <>
+            <ColorBg>
+              <SectionTwo></SectionTwo>
+              <SectionThree></SectionThree>
+            </ColorBg>
+            <SectionFour></SectionFour>
+          </>
+        )}
       </MainComponent>
     </>
   );

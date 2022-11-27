@@ -15,7 +15,16 @@ import {
 } from "../styles/header-styles";
 import logo from "../assets/logo.svg";
 import ham from "../assets/ham.svg";
-export default function Header() {
+import { PropsHeader } from "../interfaces/interface";
+export default function Header({ mobile, handleMobile }: PropsHeader) {
+  function openMenu() {
+    if (mobile) {
+      handleMobile(false);
+    } else {
+      handleMobile(true);
+    }
+  }
+
   return (
     <HeaderComponent>
       <NavComponent>
@@ -47,7 +56,7 @@ export default function Header() {
             </ComponentUlLi>
           </NavComponentUl>
           <HamButton>
-            <HamButtonImg src={ham} alt="open menu" />
+            <HamButtonImg src={ham} alt="open menu" onClick={openMenu} />
           </HamButton>
         </SeparatorNav>
       </NavComponent>

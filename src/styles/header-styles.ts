@@ -67,6 +67,7 @@ export const SeparatorNav = styled.div`
 
 export const HamButton = styled.button`
   background: transparent;
+  z-index: 500;
   @media (min-width: 900px) {
     display: none;
   }

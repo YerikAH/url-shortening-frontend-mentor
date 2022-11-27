@@ -49,3 +49,10 @@ export interface BorderInterface {
   border: string;
   color: string;
 }
+export interface PropsHeader {
+  mobile: boolean;
+  handleMobile: (value: boolean) => void;
+}
+export interface PropsMain {
+  mobile: boolean;
+}

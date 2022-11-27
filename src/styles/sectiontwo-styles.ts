@@ -60,10 +60,17 @@ export const SectionTwoBoxInput = styled.input`
 `;
 export const SectionTwoBoxSpan = styled.span`
   position: absolute;
-  font-size: 0.9rem;
   font-style: italic;
   color: var(--red);
-  bottom: -1.5rem;
+  top: 0;
+  margin-top: 3.1rem;
+  font-size: 0.7rem;
+  @media (min-width: 900px) {
+    margin-top: 0;
+    font-size: 0.9rem;
+    bottom: -1.5rem;
+    top: auto;
+  }
 `;
 export const SectionTwoBoxButton = styled.button`
   font-size: 1rem;
