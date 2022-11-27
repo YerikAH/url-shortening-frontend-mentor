@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Props, BackgroundInterface } from "../interfaces/interface";
 import deleteImage from "../assets/destroy.svg";
 import { initialBackground } from "../home/initialVariables";
@@ -20,24 +20,40 @@ export default function ShortLink({
   const [textCopy, setTextCopy] = useState("Copy");
   const [background, setBackground] =
     useState<BackgroundInterface>(initialBackground);
-  const handleClickClock = () => {
+
+  function handleClickClock(
+    evt: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) {
     let styleActiveBg: BackgroundInterface = {
       backgroundColor: "var(--dark-violet)",
     };
+    const elementButton: Element = evt.currentTarget!;
     setTextCopy("Copied!");
     setBackground(styleActiveBg);
-    setInterval(() => {
-      styleActiveBg.backgroundColor = "var(--cyan)";
-      setBackground(styleActiveBg);
-      setTextCopy("Copy");
+    elementButton.setAttribute("disabled", "true");
+
+    setTimeout(() => {
+      timeOutFunction(styleActiveBg, elementButton);
     }, 3000);
-  };
+  }
+
+  function timeOutFunction(
+    objStyle: BackgroundInterface,
+    elementHtml: Element
+  ) {
+    objStyle.backgroundColor = "var(--cyan)";
+    setBackground(objStyle);
+    setTextCopy("Copy");
+    elementHtml.removeAttribute("disabled");
+  }
+
   const handleRemoveLink = (
     evt: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     let getId: string = evt.currentTarget.value;
     handleDelete(getId);
   };
+
   return (
     <ShortLinkBox>
       <ShortLinkOriginal>{urlOriginal}</ShortLinkOriginal>
@@ -45,7 +61,7 @@ export default function ShortLink({
       <ShortLinkButton
         className="btnClipboard"
         data-clipboard-text={urlShort}
-        onClick={handleClickClock}
+        onClick={(evt) => handleClickClock(evt)}
         style={background}
       >
         {textCopy}

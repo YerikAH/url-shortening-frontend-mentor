@@ -19,6 +19,7 @@ import {
   AllShortLinks,
   SectionTwoBoxSpan,
 } from "../styles/sectiontwo-styles";
+import Loader from "./Loader";
 
 export default function SectionTwo() {
   const [borderError, setBorderError] =
@@ -27,6 +28,7 @@ export default function SectionTwo() {
   const [linkShort, setLinkShort] = useState<ShortLinkBox[]>([]);
   const [thereError, setThereError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [loader, setLoader] = useState(false);
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const userChange = evt.target.value;
@@ -49,7 +51,7 @@ export default function SectionTwo() {
   };
   async function getData() {
     const urlGet = `https://api.shrtco.de/v2/shorten?url=${urlUser}`;
-
+    setLoader(true);
     try {
       const res: Response = await fetch(urlGet);
       const json: Promise<RootObjectJson> = await res.json();
@@ -70,6 +72,7 @@ export default function SectionTwo() {
       const saveLocal: string = JSON.stringify([...linkShort, result]);
       localStorage.setItem(saveLinkLocal, saveLocal);
       setThereError(false);
+      setLoader(false);
     } catch (err) {
       let result: ErrorRes;
       if (typeof err === "string") {
@@ -80,6 +83,7 @@ export default function SectionTwo() {
       const messageCustom = customMessage(result);
       setErrorMessage(messageCustom);
       setThereError(true);
+      setLoader(false);
     }
   }
   useEffect(() => {
@@ -132,6 +136,7 @@ export default function SectionTwo() {
             handleDelete={handleDelete}
           />
         ))}
+        {loader && <Loader />}
       </AllShortLinks>
     </DivSectionTwo>
   );

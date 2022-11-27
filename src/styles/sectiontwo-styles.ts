@@ -16,6 +16,7 @@ export const DivSectionTwoBox = styled.div`
   overflow: hidden;
   @media (min-width: 900px) {
     padding: 3.5rem;
+    margin-bottom: 2rem;
   }
 `;
 export const DivSectionTwoBoxImage = styled.div`
@@ -49,7 +50,7 @@ export const DivSectionTwoBoxLogic = styled.form`
 export const SectionTwoBoxInput = styled.input`
   font-size: 1rem;
   padding: 0.5rem 1rem;
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
   color: var(--very-dark-blue);
   @media (min-width: 900px) {
     width: 80%;
@@ -67,7 +68,7 @@ export const SectionTwoBoxSpan = styled.span`
 export const SectionTwoBoxButton = styled.button`
   font-size: 1rem;
   padding: 0.5rem;
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
   color: var(--white);
   font-weight: 700;
   background-color: var(--cyan);
